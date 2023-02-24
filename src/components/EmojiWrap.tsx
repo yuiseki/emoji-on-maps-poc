@@ -70,7 +70,7 @@ const emojiDict: {
     src: "/emoji/is_all_scam.png",
     name: "はすべて詐欺です",
     height: 23,
-    width: 210,
+    width: 160,
   },
 };
 
