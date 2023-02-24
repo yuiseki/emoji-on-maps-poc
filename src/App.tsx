@@ -1,4 +1,9 @@
-import { Map, Marker, NavigationControl } from "react-map-gl";
+import {
+  AttributionControl,
+  Map,
+  Marker,
+  NavigationControl,
+} from "react-map-gl";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { EmojiMarker } from "./components/EmojiMarker";
@@ -15,7 +20,6 @@ function App() {
         }}
         mapLib={maplibregl}
         mapStyle="https://tile.openstreetmap.jp/styles/osm-bright/style.json"
-        attributionControl={true}
         initialViewState={{
           latitude: 35.713728,
           longitude: 139.776605,
@@ -24,10 +28,12 @@ function App() {
         hash={true}
         maxZoom={22}
         maxPitch={85}
+        attributionControl={false}
       >
         {points.map((poi) => {
           return <EmojiMarker {...poi} />;
         })}
+        <AttributionControl customAttribution="Original Emoji by <a href='https://misskey.io/'>Misskey.io</a>" />
         <NavigationControl
           position="bottom-right"
           visualizePitch={true}
