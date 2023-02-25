@@ -9,14 +9,19 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { EmojiMarker } from "./components/EmojiMarker";
 import { points } from "./points";
 
-function App() {
+const FullMapLayout = () => {
   return (
-    <div className="App">
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <Map
         style={{
           display: "block",
-          width: "100vw",
-          height: "100vh",
+          width: "100%",
+          height: "100%",
         }}
         mapLib={maplibregl}
         mapStyle="https://tile.openstreetmap.jp/styles/osm-bright/style.json"
@@ -41,6 +46,14 @@ function App() {
           showCompass={true}
         />
       </Map>
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div className="App">
+      <FullMapLayout />
     </div>
   );
 }
